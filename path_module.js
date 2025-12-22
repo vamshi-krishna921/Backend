@@ -1,0 +1,13 @@
+const { log } = require("console");
+const path = require("path");
+console.log(__filename);
+console.log(__dirname);
+const file = path.join("school", "record", "students", "data.txt");
+log(file);
+const parseData = path.parse(file);
+const resolveData = path.resolve(file);
+const extData = path.extname(file);
+const baseName = path.basename(file);
+const dirName = path.dirname(file);
+const sep = path.sep;
+log({ parseData, resolveData, extData, baseName, dirName, sep });

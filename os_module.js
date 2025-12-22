@@ -1,0 +1,14 @@
+const { log } = require('console');
+const os = require('os');
+log("Platform : ", os.platform());
+log("User Info: ", os.userInfo());
+log("OS Architecture : ", os.arch());
+log("Free memory : ", os.freemem(), "bytes");
+log("Total memory : ", os.totalmem(), "bytes");
+log("System uptime : ", os.uptime(), "seconds");
+log("Home directory : ", os.homedir());
+log("Host name : ", os.hostname());
+log("Network interfaces : ",os.networkInterfaces());
+log("Cpu details : ", os.cpus());
+log("Temporary directory : ", os.tmpdir());
+log("Os type : ", os.type());
