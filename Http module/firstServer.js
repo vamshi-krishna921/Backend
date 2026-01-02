@@ -3,7 +3,7 @@ const http = require("http");
 //* Web server
 const server = http.createServer((req, res) => {
   if (req.url === "/") {
-    res.write("This is my first page response. Is the changes are responding");
+    res.write("This is my first page response. Is the changes are responding changed");
     res.end();
   } else if (req.url === "/page1") {
     // res.setHeader("Content-Type", "text/plain")
