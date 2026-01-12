@@ -1,5 +1,4 @@
 import { log } from "console";
-import { toNamespacedPath } from "path";
 import readline from "readline";
 const rdln = readline.createInterface({
   input: process.stdin,
