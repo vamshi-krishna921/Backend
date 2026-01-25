@@ -30,16 +30,29 @@
     </main>
 
     <script>
-        document.getElementById('shortenForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            //TODO new method
-            const formData = new FormData(e.target);
-            const formUrl = formData.get('url');
-            const code = formData.get('shortUrl');
-            console.log(formUrl, code);
-            
-
-        })
+      document
+        .getElementById("shortenForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          //TODO new method
+          const formData = new FormData(e.target);
+          const url = formData.get("url");
+          const shortCode = formData.get("shortUrl");
+          console.log(url, shortCode);
+          try {
+            const response = await fetch("/shorten", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ url, shortCode }),
+            });
+            if (response.ok) {
+              const data = await response.json();
+              alert(`Short URL: http://localhost:3001/${data.shortCode}`);
+            }
+          } catch (error) {
+            console.log(error);
+          }
+        });
     </script>
   </body>
 </html>
